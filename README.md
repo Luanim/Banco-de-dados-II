@@ -28,9 +28,11 @@ Este repositório contém o projeto final da disciplina **Banco de Dados II**. O
 
 O script realiza a junção entre os dados da tabela `Peca` e os dados do arquivo `Fornecimento.xml`, exibindo o resultado no terminal.
 
-## Autor
+## Autores
 
-- **Luanim**
+- **Luan Toldo da Rocha**
+- **Matheus Cervenski**
+- **Gustavo Brunoni**
 
 ---
 
