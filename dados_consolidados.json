@@ -1,0 +1,315 @@
+{
+  "1": {
+    "cliente": {
+      "id": 1,
+      "cpf": "12345678901",
+      "nome": "Ana Silva",
+      "endereco": "Rua A, 100",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "email": "ana@email.com"
+    },
+    "interesses": {
+      "nome": "Ana Silva",
+      "interesses": [
+        "tecnologia",
+        "programacao",
+        "leitura",
+        "games"
+      ],
+      "resumo": "Profissional de TI apaixonada por inovacao"
+    },
+    "amigos": [
+      2,
+      3,
+      5
+    ],
+    "compras": [
+      {
+        "id": 1,
+        "id_produto": 1,
+        "data": "2024-01-15",
+        "id_cliente": 1,
+        "produto": {
+          "id": 1,
+          "produto": "Notebook Dell",
+          "valor": 3500.0,
+          "quantidade": 50,
+          "tipo": "eletronico"
+        }
+      },
+      {
+        "id": 2,
+        "id_produto": 2,
+        "data": "2024-01-20",
+        "id_cliente": 1,
+        "produto": {
+          "id": 2,
+          "produto": "Teclado Mecanico",
+          "valor": 450.0,
+          "quantidade": 100,
+          "tipo": "eletronico"
+        }
+      },
+      {
+        "id": 3,
+        "id_produto": 5,
+        "data": "2024-02-01",
+        "id_cliente": 1,
+        "produto": {
+          "id": 5,
+          "produto": "Fone Bluetooth",
+          "valor": 250.0,
+          "quantidade": 120,
+          "tipo": "eletronico"
+        }
+      }
+    ]
+  },
+  "2": {
+    "cliente": {
+      "id": 2,
+      "cpf": "12345678902",
+      "nome": "Bruno Costa",
+      "endereco": "Rua B, 200",
+      "cidade": "Rio de Janeiro",
+      "uf": "RJ",
+      "email": "bruno@email.com"
+    },
+    "interesses": {
+      "nome": "Bruno Costa",
+      "interesses": [
+        "esportes",
+        "basquete",
+        "fitness",
+        "tecnologia"
+      ],
+      "resumo": "Atleta amador e entusiasta de esportes"
+    },
+    "amigos": [
+      4
+    ],
+    "compras": [
+      {
+        "id": 4,
+        "id_produto": 4,
+        "data": "2024-01-18",
+        "id_cliente": 2,
+        "produto": {
+          "id": 4,
+          "produto": "Livro Clean Code",
+          "valor": 85.0,
+          "quantidade": 80,
+          "tipo": "livro"
+        }
+      },
+      {
+        "id": 5,
+        "id_produto": 8,
+        "data": "2024-02-05",
+        "id_cliente": 2,
+        "produto": {
+          "id": 8,
+          "produto": "Bola de Basquete",
+          "valor": 120.0,
+          "quantidade": 200,
+          "tipo": "esportes"
+        }
+      }
+    ]
+  },
+  "3": {
+    "cliente": {
+      "id": 3,
+      "cpf": "12345678903",
+      "nome": "Carlos Oliveira",
+      "endereco": "Rua C, 300",
+      "cidade": "Belo Horizonte",
+      "uf": "MG",
+      "email": "carlos@email.com"
+    },
+    "interesses": {
+      "nome": "Carlos Oliveira",
+      "interesses": [
+        "tecnologia",
+        "design",
+        "games",
+        "cinema"
+      ],
+      "resumo": "Designer grafico e gamer casual"
+    },
+    "amigos": [
+      4,
+      5
+    ],
+    "compras": [
+      {
+        "id": 6,
+        "id_produto": 3,
+        "data": "2024-01-25",
+        "id_cliente": 3,
+        "produto": {
+          "id": 3,
+          "produto": "Mouse Wireless",
+          "valor": 150.0,
+          "quantidade": 150,
+          "tipo": "eletronico"
+        }
+      },
+      {
+        "id": 7,
+        "id_produto": 6,
+        "data": "2024-02-10",
+        "id_cliente": 3,
+        "produto": {
+          "id": 6,
+          "produto": "Monitor 27\"",
+          "valor": 1200.0,
+          "quantidade": 40,
+          "tipo": "eletronico"
+        }
+      }
+    ]
+  },
+  "4": {
+    "cliente": {
+      "id": 4,
+      "cpf": "12345678904",
+      "nome": "Diana Ferreira",
+      "endereco": "Rua D, 400",
+      "cidade": "Salvador",
+      "uf": "BA",
+      "email": "diana@email.com"
+    },
+    "interesses": {
+      "nome": "Diana Ferreira",
+      "interesses": [
+        "games",
+        "esportes",
+        "streaming",
+        "fitness"
+      ],
+      "resumo": "Streamer de games e fitness enthusiast"
+    },
+    "amigos": [
+      6
+    ],
+    "compras": [
+      {
+        "id": 8,
+        "id_produto": 7,
+        "data": "2024-01-30",
+        "id_cliente": 4,
+        "produto": {
+          "id": 7,
+          "produto": "Cadeira Gamer",
+          "valor": 950.0,
+          "quantidade": 60,
+          "tipo": "mobiliario"
+        }
+      },
+      {
+        "id": 9,
+        "id_produto": 9,
+        "data": "2024-02-08",
+        "id_cliente": 4,
+        "produto": {
+          "id": 9,
+          "produto": "Bola de Futebol",
+          "valor": 95.0,
+          "quantidade": 250,
+          "tipo": "esportes"
+        }
+      }
+    ]
+  },
+  "5": {
+    "cliente": {
+      "id": 5,
+      "cpf": "12345678905",
+      "nome": "Etienne Morales",
+      "endereco": "Rua E, 500",
+      "cidade": "Curitiba",
+      "uf": "PR",
+      "email": "etienne@email.com"
+    },
+    "interesses": {
+      "nome": "Etienne Morales",
+      "interesses": [
+        "cinema",
+        "leitura",
+        "musica",
+        "artes"
+      ],
+      "resumo": "Cinefilo e apreciador de artes"
+    },
+    "amigos": [
+      6
+    ],
+    "compras": [
+      {
+        "id": 10,
+        "id_produto": 10,
+        "data": "2024-02-12",
+        "id_cliente": 5,
+        "produto": {
+          "id": 10,
+          "produto": "Filme DVD - Matrix",
+          "valor": 45.0,
+          "quantidade": 30,
+          "tipo": "midia"
+        }
+      }
+    ]
+  },
+  "6": {
+    "cliente": {
+      "id": 6,
+      "cpf": "12345678906",
+      "nome": "Fernanda Lima",
+      "endereco": "Rua F, 600",
+      "cidade": "Brasilia",
+      "uf": "DF",
+      "email": "fernanda@email.com"
+    },
+    "interesses": {
+      "nome": "Fernanda Lima",
+      "interesses": [
+        "tecnologia",
+        "programacao",
+        "leitura",
+        "negocios"
+      ],
+      "resumo": "Entrepreneur focada em tech startups"
+    },
+    "amigos": [],
+    "compras": [
+      {
+        "id": 11,
+        "id_produto": 1,
+        "data": "2024-02-15",
+        "id_cliente": 6,
+        "produto": {
+          "id": 1,
+          "produto": "Notebook Dell",
+          "valor": 3500.0,
+          "quantidade": 50,
+          "tipo": "eletronico"
+        }
+      },
+      {
+        "id": 12,
+        "id_produto": 2,
+        "data": "2024-02-18",
+        "id_cliente": 6,
+        "produto": {
+          "id": 2,
+          "produto": "Teclado Mecanico",
+          "valor": 450.0,
+          "quantidade": 100,
+          "tipo": "eletronico"
+        }
+      }
+    ]
+  }
+}
