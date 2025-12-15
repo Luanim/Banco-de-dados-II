@@ -185,26 +185,33 @@ def gravar_redis(cache: redis.Redis, consolidados: Dict[int, Dict[str, Any]]):
         for cid, payload in consolidados.items():
             base_key = f"cliente:{cid}"
             cli = payload["cliente"]
-            cache.hset(base_key, mapping={
-                "id": cli.get("id"),
-                "cpf": cli.get("cpf"),
-                "nome": cli.get("nome"),
-                "cidade": cli.get("cidade"),
-                "uf": cli.get("uf"),
-                "email": cli.get("email"),
-            })
+            
+            # Grava dados do cliente como hash (formato chave-valor individual)
+            cache.hset(base_key, "id", str(cli.get("id", "")))
+            cache.hset(base_key, "cpf", str(cli.get("cpf", "")))
+            cache.hset(base_key, "nome", str(cli.get("nome", "")))
+            cache.hset(base_key, "cidade", str(cli.get("cidade", "")))
+            cache.hset(base_key, "uf", str(cli.get("uf", "")))
+            cache.hset(base_key, "email", str(cli.get("email", "")))
 
+            # Grava amigos como lista
             cache.delete(f"{base_key}:amigos")
             amigos = payload.get("amigos", [])
             if amigos:
-                cache.rpush(f"{base_key}:amigos", *amigos)
+                for a in amigos:
+                    cache.rpush(f"{base_key}:amigos", str(a))
 
+            # Grava compras como lista JSON
             cache.delete(f"{base_key}:compras")
-            compras = [json.dumps(c) for c in payload.get("compras", [])]
+            compras = payload.get("compras", [])
             if compras:
-                cache.rpush(f"{base_key}:compras", *compras)
+                for c in compras:
+                    cache.rpush(f"{base_key}:compras", json.dumps(c, default=str))
 
+            # Grava interesses como string JSON
             cache.set(f"{base_key}:interesses", json.dumps(payload.get("interesses", {})))
+            
+            # Grava recomendações como string JSON
             cache.set(f"{base_key}:recs", json.dumps(payload.get("recs", [])))
         
         print(f"[Redis] {len(consolidados)} clientes gravados com sucesso!")
@@ -254,13 +261,27 @@ def main():
     print("[4/5] Consolidando dados...")
     consolidados = consolidar(dpg, interesses, amigos)
 
-    print("[5/5] Gravando dados em JSON...")
+    print("[5/5] Gravando dados...")
+    cache = obter_cliente_redis()
+    redis_ok = gravar_redis(cache, consolidados)
+    
+    # Sempre salva em JSON como backup
     salvar_json(consolidados)
     
     print("\n" + "="*60)
     print("INTEGRACAO CONCLUIDA COM SUCESSO!")
     print("="*60)
-    print("✓ Dados consolidados salvos em: dados_consolidados.json")
+    
+    if redis_ok:
+        print("✓ Dados gravados no Redis")
+        print("\nConsulte com:")
+        print("  redis-cli")
+        print("  KEYS cliente:*")
+        print("  HGETALL cliente:1")
+    else:
+        print("✓ Dados salvos em JSON: dados_consolidados.json")
+        print("  (Redis nao esta disponivel)")
+    
     print("\nProximas etapas:")
     print("  1. Visualizar dados: python visualizar_dados.py")
     print("  2. Iniciar API:      python api.py")

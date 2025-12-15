@@ -311,5 +311,19 @@
         }
       }
     ]
+  },
+  "7": {
+    "cliente": {
+      "id": 7,
+      "cpf": "12325432346",
+      "nome": "teste da silva",
+      "endereco": "rua 45",
+      "cidade": "chape",
+      "uf": "sc",
+      "email": "teste@teste.com"
+    },
+    "interesses": {},
+    "amigos": [],
+    "compras": []
   }
 }
